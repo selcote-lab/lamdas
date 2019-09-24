@@ -23,19 +23,31 @@ public class Main {
         employees.add(zouhaire);
         employees.add(ali);
 
-//        Collections.sort(employees, new Comparator<Employee>() {
-//            @Override
-//            public int compare(Employee emp1, Employee emp2) {
-//                return emp1.getName().compareTo(emp2.getName());
-//            }
-//        });
-        Collections.sort(employees, (Employee emp1, Employee emp2) -> {
+        Collections.sort(employees, (emp1,  emp2) -> {
             return emp1.getName().compareTo(emp2.getName());
         });
 
         for(Employee employee: employees){
             System.out.println(employee.getName());
         }
+
+//        String result = doStringStuff(
+//                (String ch1, String ch2) -> {
+//            return ch1.toUpperCase().concat(ch2.toUpperCase());
+//            },
+//            employees.get(0).getName(), employees.get(1).getName()
+//        );
+
+        UpperAndConcat uc = (s1, s2) -> s1.toUpperCase() + s2.toUpperCase();
+        String result = doStringStuff(uc, employees.get(0).getName(), employees.get(1).getName());
+        System.out.println(result);
+    }
+    public static String doStringStuff(
+            UpperAndConcat upperAndConcat,
+            String s1,
+            String s2
+    ){
+        return upperAndConcat.upperAndConcat(s1, s2);
     }
 }
 
@@ -65,3 +77,6 @@ class Employee {
     }
 }
 
+interface UpperAndConcat {
+    public String upperAndConcat(String s1, String s2);
+}
