@@ -8,14 +8,6 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-	    new Thread(
-	            () -> {
-                    System.out.println("Printing from the Runnable");
-                    System.out.println("Line 2");
-                    System.out.println("Line 3");
-                    System.out.format("This is line %d\n", 4);
-                }).start();
-
 	    Employee zouhaire = new Employee("zouhaire", 29);
 	    Employee ali = new Employee("Ali", 28);
 
@@ -23,24 +15,22 @@ public class Main {
         employees.add(zouhaire);
         employees.add(ali);
 
-        Collections.sort(employees, (emp1,  emp2) -> {
-            return emp1.getName().compareTo(emp2.getName());
+        employees.forEach(employee -> {
+            System.out.println(employee.getName());
+            System.out.println(employee.getAge());
         });
 
-        for(Employee employee: employees){
-            System.out.println(employee.getName());
-        }
+//        for(Employee employee: employees){
+//            System.out.println(employee.getName());
+//            System.out.println(employee.getAge());
+////            new Thread(() -> System.out.println(employee.getAge())).start();
+//        }
 
-//        String result = doStringStuff(
-//                (String ch1, String ch2) -> {
-//            return ch1.toUpperCase().concat(ch2.toUpperCase());
-//            },
-//            employees.get(0).getName(), employees.get(1).getName()
-//        );
+//        for (int i=0; i< employees.size(); i++){
+//            Employee e = employees.get(i);
+//            new Thread(() -> System.out.println(e.getAge())).start();
+//        }
 
-        UpperAndConcat uc = (s1, s2) -> s1.toUpperCase() + s2.toUpperCase();
-        String result = doStringStuff(uc, employees.get(0).getName(), employees.get(1).getName());
-        System.out.println(result);
     }
     public static String doStringStuff(
             UpperAndConcat upperAndConcat,
@@ -79,4 +69,34 @@ class Employee {
 
 interface UpperAndConcat {
     public String upperAndConcat(String s1, String s2);
+}
+
+class AnotherClass {
+    public String doSomething(){
+        int i=0;
+        UpperAndConcat uc = (s1, s2) -> {
+            System.out.println("The lambda expression's class is " + getClass().getSimpleName());
+            System.out.println("I = " + i);
+            return s1.toUpperCase() + s2.toUpperCase();
+        } ;
+
+        System.out.println("The another class's name " + getClass().getSimpleName());
+        System.out.println("i = " + i);
+        return Main.doStringStuff(uc, "String1", "String2");
+    }
+
+    public void printValue(){
+        int number = 25;
+
+        Runnable r = () -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            System.out.println( number );
+        };
+
+        new Thread(r).start();
+    }
 }

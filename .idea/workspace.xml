@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="637128e8-381b-4012-a9e5-f94b48a35d73" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lamdas/com/tonasolution/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lamdas/com/tonasolution/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lamdas/com/tonasolution/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lamdas/com/tonasolution/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lamdas/com/tonasolution/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lamdas/com/tonasolution/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lamdas/com/tonasolution/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lamdas/com/tonasolution/UpperAndConcat.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tonasolution/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tonasolution/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
